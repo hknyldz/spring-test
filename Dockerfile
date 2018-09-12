@@ -17,7 +17,7 @@ ADD src /app/src
 
 # Build the app
 RUN ["mvn", "clean", "package"]
-#EXPOSE 8080
+EXPOSE 8080
 # Run the app
-#RUN bash -c 'touch /app/target/hello-world-0.0.1-SNAPSHOT.jar'
-#ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app/target/hello-world-0.0.1-SNAPSHOT.jar"]
+RUN bash -c 'touch /app/target/hello-world-0.0.1-SNAPSHOT.jar'
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app/target/hello-world-0.0.1-SNAPSHOT.jar"]
